@@ -4,7 +4,7 @@ aaa
 bbb
 ccc
 Creating a new branch is quick and quiet. 
-Creating a new branch is quick AND simple. 
+Creating a new branch is quick AND hard. 
 
 
 test dev
