@@ -1,0 +1,60 @@
+﻿@using hxWeb.Models 
+@{
+    ViewBag.Title = "登录";
+}
+
+<h2>@ViewBag.Title。</h2>
+<div class="row">
+    <div class="col-md-8">
+        <section id="loginForm">
+            <h4>使用本地帐户登录。</h4>
+            <hr /> 
+            <div class="form-group">
+                <label class="col-md-2 control-label">用户名：</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" id="uname"/> 
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">密码：</label> 
+                <div class="col-md-10">
+                    <input type="password" class="form-control" id="pwd" />  
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <div class="checkbox">
+                        <input type="checkbox" name="remembeme"/>记住我 
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="button" value="登录" id="btnLogin" class="btn btn-default" />
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-md-4">
+        <section id="socialLoginForm"> 
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $(function() {
+            $("#btnLogin").click(function() {
+                var uname = $("#uname").val();
+                var pwd = $("#pwd").val();
+                if (uname == "" || pwd == "") {
+                    alert("用户名和密码不能为空");
+                } else {
+                    var t=Demo.login(uname, pwd);
+                    location.href = "/WebIm/Index/"+t;
+                }
+            })
+        })
+    </script>
+} 
