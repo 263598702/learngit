@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '4s!$jwz7_g-%2z_@r5fbf5r)!(nc^idujcl53c)gt7v$b*+x7$'
+SECRET_KEY = '&pmku6(mt9gpe&@sg6xogll0pr(wr&$@h_bbv0nmk7m*t42@f7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'article',
+	'article',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -54,11 +54,11 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'my_blog.urls'
 
-TEMPLATE_PATH=os.path.join(BASE_DIR,'templates')
+TEMPLATES_PATH=os.path.join(BASE_DIR,'templates')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_PATH],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
